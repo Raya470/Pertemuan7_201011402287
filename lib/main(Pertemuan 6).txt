@@ -1,0 +1,87 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const AplikasiSaya());
+}
+
+//Step 1 : Stateless
+class AplikasiSaya extends StatelessWidget {
+  const AplikasiSaya({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //Step 2
+    return MaterialApp(
+      //sep 4 : copy & paste class homescreen
+      home: HomeScreen(),
+    );
+  }
+}
+
+//Step 3 : Stateful
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    //step 5 : add Scaffold
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Layout"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            color: Colors.greenAccent,
+            child: FlutterLogo(
+              size: 60.0,
+            ),
+          ),
+          Container(
+            color: Colors.orangeAccent,
+            child: FlutterLogo(
+              size: 60.0,
+            ),
+          ),
+          Container(
+            color: Colors.purpleAccent,
+            child: FlutterLogo(
+              size: 60.0,
+            ),
+          ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  color: Colors.greenAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
+                Container(
+                  color: Colors.orangeAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
+                Container(
+                  color: Colors.purpleAccent,
+                  child: FlutterLogo(
+                    size: 60.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
